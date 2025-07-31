@@ -12,6 +12,7 @@ public class LassoTrace : MonoBehaviour
     private List<Vector3> pointsList = new List<Vector3>();
 
     private LineRenderer line;
+    
 
     private void Start()
     {
