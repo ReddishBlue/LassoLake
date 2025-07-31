@@ -4,12 +4,12 @@ public class startPoint : MonoBehaviour
 {
     [SerializeField] private bool wasPassedOnce;
     [SerializeField] private bool wasPassedTwice;
-    Circle2 mainShape;
+    //private Circle2 mainShape;
 
 
     private void Start()
     {
-        mainShape = gameObject.AddComponent<Circle2>();
+        
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -19,12 +19,12 @@ public class startPoint : MonoBehaviour
             if (!wasPassedOnce)
             {
                 wasPassedOnce = true;
-                mainShape.startPassed();
+                gameObject.GetComponentInParent<Circle2>().startPassed();
             }
             else if (wasPassedOnce)
             {
                 wasPassedTwice = true;
-                mainShape.endPassed();
+                gameObject.GetComponentInParent<Circle2>().endPassed();
             }
         }
     }
