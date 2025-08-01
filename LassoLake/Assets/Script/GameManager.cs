@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
         //LoadLevel("Tutorial");
     }
 
-    private void LoadLevel(string levelName)
+    public void LoadLevel(string levelName)
     {
         this.level = levelName;
         
