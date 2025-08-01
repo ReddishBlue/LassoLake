@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("start activated");
         NewGame();
     }
 
@@ -33,14 +32,13 @@ public class GameManager : MonoBehaviour
         //reset game state (score, lives, start at level 1)
         this.score = 0;
         //this.activeAnimals = 0;
-        Debug.Log("new game called");
         LoadLevel("MainMenu");
     }
 
     public void LoadLevel(string levelName)
     {
         this.level = levelName;
-        Debug.Log("LoadLevel called");
+        
         SceneManager.LoadScene(levelName); 
 
     }
