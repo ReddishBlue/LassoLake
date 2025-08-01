@@ -12,4 +12,10 @@ public class MainMenu : MonoBehaviour
     {
         gm.LoadLevel("Pens");
     }
+
+    public void ExitGame()
+    {
+        //Debug.Log("Quit"); //to see if it actually works
+        Application.Quit();
+    }
 }
