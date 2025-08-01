@@ -44,6 +44,20 @@ public class LassoTrace : MonoBehaviour
 
         line.positionCount = pointsList.Count;
         line.SetPositions(pointsList.ToArray());
+
+        toggleLasso();
+    }
+
+    private void toggleLasso()
+    {
+        if (isClicked)
+        {
+            gameObject.tag = "Lasso";
+        }
+        else
+        {
+            gameObject.tag = "Untagged";
+        }
     }
 
     private void addToListOfPoints(Vector3 currPos)
