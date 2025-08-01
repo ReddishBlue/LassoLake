@@ -129,6 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 85767593}
   - component: {fileID: 85767594}
+  - component: {fileID: 85767595}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -166,6 +167,19 @@ MonoBehaviour:
   score: 0
   level: 
   activeAnimals: []
+--- !u!114 &85767595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85767592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8718f42c35f3d654082a667638db0d3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

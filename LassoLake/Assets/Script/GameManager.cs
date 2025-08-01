@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 
     //TODO: change to type animal
     public LittleGuyTest[] activeAnimals;
-    
+
     //public Animal[] inventory;
 
     private void Awake()
@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     {
         //reset game state (score, lives, start at level 1)
         this.score = 0;
+        
         //this.activeAnimals = 0;
         LoadLevel("MainMenu");
     }
@@ -38,8 +39,8 @@ public class GameManager : MonoBehaviour
     public void LoadLevel(string levelName)
     {
         this.level = levelName;
-        
-        SceneManager.LoadScene(levelName); 
+
+        SceneManager.LoadScene(levelName);
 
     }
 
@@ -48,4 +49,6 @@ public class GameManager : MonoBehaviour
         //all animals as variants of a base animal. they share a script!
         //activeAnimals = FindObjectsByType<LittleGuyTest>(FindObjectsSortMode.None);
     }
+
+    
 }
