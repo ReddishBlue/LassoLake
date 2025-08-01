@@ -8,6 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Global.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Lake.unity
+    guid: 9e07929d6c65f2942989159a252ea724
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 9b1f5e3a22458d64fa3b130ac13b89dd
+  - enabled: 1
+    path: Assets/Scenes/Pens.unity
+    guid: 3764f64959a8f6048b2ecbe2ca1f966c
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
