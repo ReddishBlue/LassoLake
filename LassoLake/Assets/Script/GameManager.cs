@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("start activated");
         NewGame();
     }
 
@@ -32,15 +33,14 @@ public class GameManager : MonoBehaviour
         //reset game state (score, lives, start at level 1)
         this.score = 0;
         //this.activeAnimals = 0;
-
-        //TODO this should start on a Main Menu probably
-        //LoadLevel("Tutorial");
+        Debug.Log("new game called");
+        LoadLevel("MainMenu");
     }
 
     public void LoadLevel(string levelName)
     {
         this.level = levelName;
-        
+        Debug.Log("LoadLevel called");
         SceneManager.LoadScene(levelName); 
 
     }
@@ -48,6 +48,6 @@ public class GameManager : MonoBehaviour
     private void OnLevelLoaded(Scene scene, LoadSceneMode mode)
     {
         //all animals as variants of a base animal. they share a script!
-        activeAnimals = FindObjectsByType<LittleGuyTest>(FindObjectsSortMode.None);
+        //activeAnimals = FindObjectsByType<LittleGuyTest>(FindObjectsSortMode.None);
     }
 }
