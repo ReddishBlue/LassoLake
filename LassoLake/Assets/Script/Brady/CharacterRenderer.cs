@@ -11,6 +11,7 @@ public class MyCharacterRenderer : MonoBehaviour
     // public static readonly string[] runDirectionsFlipped = {"Flip Run W", "Flip Run E"};
     private int lastLookDirection;
     private int lastMoveDirection;
+    private bool isMoving;
 
     Animator animator;
     int lastDirection;
@@ -28,38 +29,45 @@ public class MyCharacterRenderer : MonoBehaviour
         string[] directionArray = null;
 
         //measure the magnitude of the input.
-        if (direction.magnitude < .01f)
+        if (direction.magnitude < .0001f)
         {
             //if we are basically standing still, we'll use the Static states
             //we won't be able to calculate a direction if the user isn't pressing one, anyway!
             directionArray = staticDirections;
+            isMoving = false;
         }
         else
         {
             //we can calculate which direction we are going in
             //use DirectionToIndex to get the index of the slice from the direction vector
             //save the answer to lastDirection
+            isMoving = true;
             directionArray = runDirections;
             lastMoveDirection = DirectionToIndex(direction, 4);
         }
         // Debug.Log(directionArray[lastDirection]);
         //tell the animator to play the requested state
-        playAnimation(directionArray);
+        playAnimation();
     }
-
-    public void SetLookDirection(Vector2 direction)
-    {
-        lastLookDirection = DirectionToIndex(direction, 4);
-    }
+    
 
     //helper functions
 
 
-    public void playAnimation(string[] directionArray)
+    public void playAnimation()
     {
         // Debug.Log(staticDirections[lastLookDirection]);
         // Debug.Log(directionArray[lastLookDirection]);
-        animator.Play(directionArray[lastLookDirection]);
+        if (isMoving)
+        {
+            Debug.Log("moving");
+            animator.Play("moving");
+        }
+        else
+        {
+            animator.Play("idle");
+        }
+        // animator.Play(directionArray[lastLookDirection]);
     }
     //this function converts a Vector2 direction to an index to a slice around a circle
     //this goes in a counter-clockwise direction.

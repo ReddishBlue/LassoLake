@@ -37,7 +37,12 @@ public class PlayerMovement : MonoBehaviour
         playerInputActions.Player.Disable();
     }
 
-    private void FixedUpdate() 
+    private void onInteract()
+    {
+        
+    }
+
+    private void Update() 
     {
         Movement();
         
@@ -61,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
     {
         
         Vector2 currentPos = rbody.position;
-        Vector2 newPos = currentPos + movement * Time.fixedDeltaTime;
+        Vector2 newPos = currentPos + movement;
         // if (animationController != null)
         // {
         //     if (movement.magnitude > 0.1f)
@@ -91,11 +96,9 @@ public class PlayerMovement : MonoBehaviour
     private void Movement()
     {
         Vector2 input = playerInputActions.Player.Move.ReadValue<Vector2>();
-
-        float speed = movementSpeed;
-
+        
         // Debug.Log("speed = " + speed);
-        Vector2 movement = input * speed;
+        Vector2 movement = input * (movementSpeed * Time.deltaTime);
 
         MovePlayer(movement);
         

@@ -4,66 +4,130 @@ using UnityEngine;
 
 public class EnemyFSM : MonoBehaviour
 {
-    public enum EnemyState {Scanning, AttackPlayer}
+    public enum animalState {idle, moving, lasso, deciding, captured}
 
-    public EnemyState currentState = EnemyState.Scanning;
+    public animalState currentState = animalState.deciding;
+    private Vector2 moveDir;
+    public int moveSpeed = 5;
+    public int idleTime = 3;
+    public int moveInterval = 2;
+    private bool changeDirection;
+    private bool currentlyIdle = false;
+    private bool currentlyMoving = false;
+    private Animator animator;
+    Rigidbody2D rbody;
 
-    public int rotationSpeed = 20;
-    private int rotationDirection = 1;
-
-    // public EnemyAISight sightSensor;
-    // public EnemyCombat enemyCombat;
-
-    public float angleMin = 90;
-    public float angleMax = 270;
+    private void Awake()
+    {
+        //cache the animator component
+        animator = GetComponent<Animator>();
+        rbody = GetComponent<Rigidbody2D>();
+    }
 
     void Update()
     {
-        if (currentState == EnemyState.Scanning) {
-            Scanning();
-        } else if (currentState == EnemyState.AttackPlayer) {
-            AttackPlayer();
+        Debug.Log(currentState);
+        if (currentState == animalState.idle) {
+            idle();
+        } else if (currentState == animalState.moving) {
+            moving();
+        }
+        else if (currentState == animalState.lasso)
+        {
+            lasso();
+        }
+        else if (currentState == animalState.captured)
+        {
+            captured();
+        }
+        else if (currentState == animalState.deciding)
+        {
+            deciding();
         }
     }
 
-    void Scanning()
+    void idle()
     {
-        // if (sightSensor.detectedObject != null) {
-        //     currentState = EnemyState.AttackPlayer;
-        //     return;
-        // }
-        //
-        // if(transform.rotation.eulerAngles.z >= angleMax)
-        // {
-        //     rotationDirection = -1;
-        //     
-        // }
-        // if(transform.rotation.eulerAngles.z <= angleMin)
-        // {
-        //     rotationDirection = 1;
-        // }
-        //
-        // transform.Rotate(0,0,rotationDirection* rotationSpeed*Time.deltaTime);
+        if (!currentlyIdle)
+        {
+            StartCoroutine(idleTimer(idleTime));
+        }
+      //if co-routine is not already running, start coroutine that counts a certain amount of time
+      
+    }
+    
+    
+    private IEnumerator idleTimer(float time)
+    {
+        currentlyIdle = true;
+        animator.Play("idle");
+        yield return new WaitForSeconds(time);
+        currentState = animalState.deciding;
+        currentlyIdle = false;
+        
+    }
+    private IEnumerator moveTimer(float time)
+    {
+        currentlyMoving = true;
+        yield return new WaitForSeconds(time);
+        currentState = animalState.idle;
+        currentlyMoving = false;
+        
+    }
+
+    void moving()
+    {
+        if (!currentlyMoving)
+        {
+            StartCoroutine(moveTimer(moveInterval));   
+        }
+        else
+        {
+            animator.Play("moving");
+            Vector2 movement = moveDir * (moveSpeed * Time.deltaTime);
+            Vector2 currentPos = rbody.position;
+            Vector2 newPos = currentPos + movement;
+            
+            rbody.MovePosition(newPos);
+            // MovePlayer(movement);
+        }
+        
+        if (changeDirection)
+        {
+            currentState = animalState.deciding;
+        }
+        
+        
+    }
+
+    void lasso()
+    {
+        //make sounds?
+    }
+
+    void deciding()
+    {
+        //generate random direction
+        int xDir = Random.Range(-1, 1);
+        int yDir = Random.Range(-1, 1);
+        if (xDir == 0 && yDir == 0)
+        {
+            if (Random.Range(0, 1) == 0)
+            {
+                xDir = 1;
+            }
+            else{
+                yDir = 1;
+            }
+        }
+        moveDir = new Vector2(xDir, yDir);
+        currentState = animalState.moving;
+        Debug.Log(moveDir);
 
     }
 
-    void AttackPlayer()
+    void captured()
     {
-        // if (sightSensor.detectedObject == null) {
-        //     currentState = EnemyState.Scanning;
-        //     return;
-        // }
-        //
-        // Vector3 directionToController = 
-        //     Vector3.Normalize(sightSensor.detectedObject.bounds.center - transform.position);
-        //
-        // float angleToCollider = Mathf.Atan2(directionToController.y, directionToController.x) * Mathf.Rad2Deg - 90; //offset by 90 to align with y
-        //
-        // transform.rotation = Quaternion.Euler(0, 0, angleToCollider);
-        //
-        // if (!enemyCombat.isOnCooldown) {
-        //     StartCoroutine(enemyCombat.Fire());
-        // }
-        //
+        
     }
 }
