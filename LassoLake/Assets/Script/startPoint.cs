@@ -4,13 +4,6 @@ public class startPoint : MonoBehaviour
 {
     [SerializeField] private bool wasPassedOnce;
     [SerializeField] private bool wasPassedTwice;
-    //private Circle2 mainShape;
-
-
-    private void Start()
-    {
-        
-    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
