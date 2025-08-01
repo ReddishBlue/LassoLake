@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 
     //TODO: change to type animal
     public LittleGuyTest[] activeAnimals;
+    
+    //public Animal[] inventory;
 
     private void Awake()
     {
