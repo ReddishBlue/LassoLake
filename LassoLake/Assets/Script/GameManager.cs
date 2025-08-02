@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public LittleGuyTest[] activeAnimals;
     public string inventory;
 
+    public List<string> capturedAnimals;
+
     //public Animal[] inventory;
 
     private void Awake()
@@ -27,6 +29,14 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         NewGame();
+    }
+
+    public void addAnimal(string animal){
+        capturedAnimals.Add(animal);
+    }
+
+    public List<string> getAnimals(){
+        return capturedAnimals;
     }
 
 
