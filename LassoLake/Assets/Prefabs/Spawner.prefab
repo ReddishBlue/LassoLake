@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRate: 6
   animalPrefabs:
-  - {fileID: 1405555193644016104, guid: 9e0bc22c3c914fd448d30d91f1020638, type: 3}
-  - {fileID: 8082571302807293187, guid: b2b0be240f77fa3428cbac1cbdf83ff6, type: 3}
+  - {fileID: 1526990761695593852, guid: 69d431a88dbefef418495aedb59fedf2, type: 3}
+  - {fileID: 1526990761695593852, guid: aa92085894220fa4ebe22df187eba9d5, type: 3}
   canSpawn: 1
   numActiveAnimals: 0
