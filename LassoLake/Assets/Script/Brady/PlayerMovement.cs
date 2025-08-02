@@ -135,7 +135,11 @@ public class PlayerMovement : MonoBehaviour
         selectedAnimal = closestAnimal;
         AnimalFSM animalScript = closestAnimal.GetComponent<AnimalFSM>();
         animalScript.doLasso();
-        lassoPattern = Instantiate(lassoPatternPrefab, transform.position, Quaternion.identity);
+        Vector3 screenCenter = new Vector3(Screen.width / 2f, Screen.height / 2f, 0); 
+        // cameraZDistance would be the z-position of your 2D objects in world space
+        Vector3 worldCenter = Camera.main.ScreenToWorldPoint(screenCenter);
+        worldCenter.z = 0;
+        lassoPattern = Instantiate(lassoPatternPrefab, worldCenter, Quaternion.identity);
         Circle2 lassoPatternScript = lassoPattern.GetComponent<Circle2>();
         lassoPatternScript.setPlayerControllerReference(this);
         lasso = Instantiate(lassoPrefab, transform.position, Quaternion.identity);
@@ -197,7 +201,7 @@ public class PlayerMovement : MonoBehaviour
     Gizmos.DrawWireSphere(transform.position, detectionRadius);
 }
 
-    private void Update() 
+    private void FixedUpdate() 
     {
         if(!inLassoMode){
             Movement();
