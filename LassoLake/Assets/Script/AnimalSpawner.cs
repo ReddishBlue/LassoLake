@@ -44,12 +44,10 @@ public class AnimalSpawner : MonoBehaviour
             GameObject animal = animalPrefabs[rand];
 
             Instantiate(animal, transform.position, Quaternion.identity); //do random position outside player visual window
-            LittleGuyTest animScript = animal.GetComponent<LittleGuyTest>();
-            animScript.mySpawner = this;
+            AnimalFSM animScript = animal.GetComponent<AnimalFSM>();
+            animScript.setAnimalSpawner(transform.gameObject);
 
-            numActiveAnimals++; //TODO detect when an animal is no longer active from THIS spawner
-
-
+            numActiveAnimals++;
         }
     }
 }

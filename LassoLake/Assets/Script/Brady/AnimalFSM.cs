@@ -21,6 +21,8 @@ public class AnimalFSM : MonoBehaviour
 
     private bool isLassoed;
 
+    [SerializeField] private GameObject mySpawner;
+
     private void Awake()
     {
         //cache the animator component
@@ -29,7 +31,14 @@ public class AnimalFSM : MonoBehaviour
         moveDir = new Vector2(-1, 0);
     }
 
-    public string getName(){
+    public void setAnimalSpawner(GameObject s)
+    {
+        Debug.Log("spawner set!");
+        mySpawner = s;
+    }
+
+    public string getName()
+    {
         return ID;
     }
 
@@ -149,6 +158,11 @@ public class AnimalFSM : MonoBehaviour
 
     public void doLasso(){
         currentState = animalState.lasso;
+
+        //subtract one from the active animal count on the spawner this cow is from
+        AnimalSpawner mySpawnerScript = mySpawner.GetComponent<AnimalSpawner>();
+        mySpawnerScript.captureAnimal();
+
         lasso();
     }
 

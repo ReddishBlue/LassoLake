@@ -5,7 +5,8 @@ public class animalID : MonoBehaviour
 
     public string ID;
 
-    public string getName(){
+    public string getName()
+    {
         return ID;
     }
 
