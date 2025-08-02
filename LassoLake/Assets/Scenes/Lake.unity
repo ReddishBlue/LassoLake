@@ -40149,7 +40149,7 @@ GameObject:
   - component: {fileID: 1681890318}
   - component: {fileID: 1681890317}
   - component: {fileID: 1681890316}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: NextSceneTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -518,7 +518,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 988772266527507056, guid: 360cdd22ec410bc4993f4c0aa59e71d5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.8905991
+      value: 2.15
       objectReference: {fileID: 0}
     - target: {fileID: 988772266527507056, guid: 360cdd22ec410bc4993f4c0aa59e71d5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -28212,7 +28212,7 @@ GameObject:
   - component: {fileID: 1328352737}
   - component: {fileID: 1328352736}
   - component: {fileID: 1328352738}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SceneChanger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
