@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement; //allows us to use SceneManager class
+using System.Collections.Generic;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -21,6 +23,7 @@ public class GameManager : MonoBehaviour
         //but we want this game object to persist!
         DontDestroyOnLoad(this.gameObject);
         inventory = "none";
+        capturedAnimals = new List<string>();
 
         //subscribe to a unity even every time scene is loaded so we can get references to this level's ball and paddle
         SceneManager.sceneLoaded += OnLevelLoaded;
