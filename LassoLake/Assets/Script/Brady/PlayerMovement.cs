@@ -34,19 +34,11 @@ public class PlayerMovement : MonoBehaviour
             //Debug.Log("null animal");
             return;
         }
-<<<<<<< Updated upstream
-
-        AnimalFSM animalFSM = selectedAnimal.GetComponent<AnimalFSM>();
-        animalFSM.lassoCompleted(successful);
-        
-
-=======
         AnimalFSM animalFSM = selectedAnimal.GetComponentInChildren<AnimalFSM>();
         if(successful){
             
         }
         animalFSM.lassoCompleted(successful);
->>>>>>> Stashed changes
     }
 
     private void Awake()
