@@ -61,7 +61,7 @@ Rigidbody2D:
     m_Bits: 63
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &3706186379233968935
 MonoBehaviour:
@@ -79,7 +79,6 @@ MonoBehaviour:
   moveSpeed: 40
   idleTime: 3
   moveInterval: 2
-  ID: pig
   mySpawner: {fileID: 0}
 --- !u!114 &3637521832015878589
 MonoBehaviour:

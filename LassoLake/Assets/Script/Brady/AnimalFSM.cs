@@ -16,7 +16,6 @@ public class AnimalFSM : MonoBehaviour
     private bool currentlyMoving = false;
     private Animator animator;
     Rigidbody2D rbody;
-    public string ID;
     private Vector2 lastDirection;
 
     private bool isLassoed;
@@ -37,14 +36,7 @@ public class AnimalFSM : MonoBehaviour
         mySpawner = s;
     }
 
-    public string getName()
-    {
-        return ID;
-    }
-
-    public void setName(string newName){
-        ID = newName;
-    }
+   
 
     void Update()
     {
@@ -160,8 +152,7 @@ public class AnimalFSM : MonoBehaviour
         currentState = animalState.lasso;
 
         //subtract one from the active animal count on the spawner this cow is from
-        AnimalSpawner mySpawnerScript = mySpawner.GetComponent<AnimalSpawner>();
-        mySpawnerScript.captureAnimal();
+        
 
         lasso();
     }
@@ -172,6 +163,12 @@ public class AnimalFSM : MonoBehaviour
         if (success)
         {
             currentState = animalState.captured;
+            if(mySpawner != null){
+                AnimalSpawner mySpawnerScript = mySpawner.GetComponent<AnimalSpawner>();
+                mySpawnerScript.captureAnimal();
+            }
+            
+            
         }
         else
         {
@@ -200,7 +197,7 @@ public class AnimalFSM : MonoBehaviour
         lastDirection = moveDir;
         moveDir.x = xDir;
         moveDir.y = yDir;
-        Debug.Log(moveDir);
+        // Debug.Log(moveDir);
         currentState = animalState.moving;
         // Debug.Log(moveDir);
 

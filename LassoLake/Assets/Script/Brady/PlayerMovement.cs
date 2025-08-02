@@ -17,12 +17,40 @@ public class PlayerMovement : MonoBehaviour
     GameObject selectedAnimal;
     public GameObject lassoPrefab;
     public GameObject lassoPatternPrefab;
+    public GameObject lasso;
+    public GameObject lassoPattern;
+    public bool inPen;
+    private GameManager gm;
 
-    public string inventory;
+    // public string inventory;
+
+    public bool inLassoMode;
+    PenManager currentPen;
 
     
 
     Rigidbody2D rbody;
+
+    
+
+
+    public void enteredPen(){
+        inPen = true;
+    }
+
+    public void exitedPen(){
+        inPen = false;
+    }
+
+    public void registerPen(PenManager penManager){
+        currentPen = penManager;
+        enteredPen();
+    }
+
+    public void deRegisterPen(PenManager penManager){
+        currentPen = null;
+        exitedPen();
+    }
 
 
     public void lassoCompleted(bool successful)
@@ -35,18 +63,26 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
         AnimalFSM animalFSM = selectedAnimal.GetComponentInChildren<AnimalFSM>();
-        if(successful){
-            
-        }
+        animalID id = selectedAnimal.GetComponent<animalID>();
+        gm.storeAnimal(id.getName());
+        // inventory = id.getName();
         animalFSM.lassoCompleted(successful);
+        Destroy(lasso);
+        Destroy(lassoPattern);
+        inLassoMode = false;
+
     }
 
     private void Awake()
     {
-        inventory = "none";
+        inLassoMode = false;
+        
+        // inventory = "none";
         playerInputActions = new LassoLakeInput();
         rbody = GetComponent<Rigidbody2D>();
         charRenderer = GetComponent<MyCharacterRenderer>();
+        gm = FindAnyObjectByType<GameManager>();
+        // inventory = gm.getInventory();
 
     }
 
@@ -69,21 +105,40 @@ public class PlayerMovement : MonoBehaviour
         onInteract();
     }
 
+    public void depositAnimal(){
+        currentPen.spawnAnimal(gm.getInventory());
+        gm.clearInventory();
+    }
+
     private void onInteract()
     {
+
+        if(inLassoMode){
+            return;
+        }
+
+        if(inPen){
+            if(gm.InventoryIsFull()){
+                depositAnimal();
+            }
+            return;
+        }
+        if(gm.InventoryIsFull()){
+            return;
+        }
         GameObject closestAnimal = findClosestEnemyInRange();
         if (closestAnimal == null)
         {
             return;
         }
+        inLassoMode = true;
         selectedAnimal = closestAnimal;
         AnimalFSM animalScript = closestAnimal.GetComponent<AnimalFSM>();
         animalScript.doLasso();
-        GameObject outline = Instantiate(lassoPatternPrefab, transform.position, Quaternion.identity);
-        Circle2 lassoTemplateScript = outline.GetComponent<Circle2>();
-        lassoTemplateScript.setPlayerControllerReference(this);
-
-        Instantiate(lassoPrefab, transform.position, Quaternion.identity);
+        lassoPattern = Instantiate(lassoPatternPrefab, transform.position, Quaternion.identity);
+        Circle2 lassoPatternScript = lassoPattern.GetComponent<Circle2>();
+        lassoPatternScript.setPlayerControllerReference(this);
+        lasso = Instantiate(lassoPrefab, transform.position, Quaternion.identity);
     }
 
     private GameObject findClosestEnemyInRange(){
@@ -144,49 +199,20 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update() 
     {
-        Movement();
-        
+        if(!inLassoMode){
+            Movement();
+        }
     }
 
-    public void OnExit()
-    {
-        // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-    //
-    // private Vector3 VectorToCursor()
-    // {
-        // Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        // Calculate direction vector from prefab to mouse
-        // Vector3 direction = mousePosition - transform.position;
-        // float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        // return direction;
-    // }
 
     private Vector2 MovePlayer(Vector2 movement)
     {
         
         Vector2 currentPos = rbody.position;
         Vector2 newPos = currentPos + movement;
-        // if (animationController != null)
-        // {
-        //     if (movement.magnitude > 0.1f)
-        //     {
-        //         if (!animationController.walking)
-        //         {
-        //             animationController.StartedWalking();
-        //         }
-        //     }
-        //     else
-        //     {
-        //         if (animationController.walking)
-        //         {
-        //             animationController.StoppedWalking();
-        //         }
-        //     }
-        // }
+
         
         if(charRenderer != null)
-            // charRenderer.SetLookDirection(VectorToCursor());
             charRenderer.SetMoveDirection(movement);
         rbody.MovePosition(newPos);
 
@@ -196,8 +222,6 @@ public class PlayerMovement : MonoBehaviour
     private void Movement()
     {
         Vector2 input = playerInputActions.Player.Move.ReadValue<Vector2>();
-        
-        // Debug.Log("speed = " + speed);
         Vector2 movement = input * (movementSpeed * Time.deltaTime);
 
         MovePlayer(movement);

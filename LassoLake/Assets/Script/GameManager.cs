@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     //TODO: change to type animal
     public LittleGuyTest[] activeAnimals;
+    public string inventory;
 
     //public Animal[] inventory;
 
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
         //by default, when a new scene is loaded, all previous scenes are unloaded and game objects destroyed
         //but we want this game object to persist!
         DontDestroyOnLoad(this.gameObject);
+        inventory = "none";
 
         //subscribe to a unity even every time scene is loaded so we can get references to this level's ball and paddle
         SceneManager.sceneLoaded += OnLevelLoaded;
@@ -26,6 +28,9 @@ public class GameManager : MonoBehaviour
     {
         NewGame();
     }
+
+
+
 
     private void NewGame()
     {
@@ -48,6 +53,22 @@ public class GameManager : MonoBehaviour
     {
         //all animals as variants of a base animal. they share a script!
         //activeAnimals = FindObjectsByType<LittleGuyTest>(FindObjectsSortMode.None);
+    }
+
+    public void storeAnimal(string incomingInv){
+        inventory = incomingInv;
+    }
+
+    public string getInventory(){
+        return inventory;
+    }
+    
+    public bool InventoryIsFull(){
+        return inventory != "none";
+    }
+
+    public void clearInventory(){
+        inventory = "none";
     }
 
     
