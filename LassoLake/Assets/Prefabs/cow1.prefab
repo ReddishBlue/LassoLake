@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 3
-  moveSpeed: 40
+  moveSpeed: 15
   idleTime: 3
   moveInterval: 2
   mySpawner: {fileID: 0}
