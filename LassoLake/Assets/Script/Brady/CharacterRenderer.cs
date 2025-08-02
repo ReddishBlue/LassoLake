@@ -60,7 +60,7 @@ public class MyCharacterRenderer : MonoBehaviour
         // Debug.Log(directionArray[lastLookDirection]);
         if (isMoving)
         {
-            Debug.Log("moving");
+            //Debug.Log("moving");
             animator.Play("moving");
         }
         else

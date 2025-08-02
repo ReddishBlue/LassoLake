@@ -3,16 +3,17 @@ using UnityEngine;
 public class MainMenu : MonoBehaviour
 {
     private GameManager gm;
-    private PauseMenu pm;
+    //private PauseMenu pm;
 
     private void Start()
     {
         gm = FindAnyObjectByType<GameManager>();
-        pm = FindAnyObjectByType<PauseMenu>();
+        //pm = FindAnyObjectByType<PauseMenu>();
     }
     public void StartGame()
     {
         gm.LoadLevel("Tutorial");
+        //gm.LoadLevel("Pens");
     }
 
     public void ExitGame()
@@ -29,6 +30,6 @@ public class MainMenu : MonoBehaviour
 
     public void ResumeGame()
     {
-        pm.ResumeGame();
+        //pm.ResumeGame();
     }
 }

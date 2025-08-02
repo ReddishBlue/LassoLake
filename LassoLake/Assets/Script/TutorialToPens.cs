@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LakeToPens : MonoBehaviour
+public class TutorialToPens : MonoBehaviour
 {
     private GameManager gm;
 
@@ -8,10 +8,11 @@ public class LakeToPens : MonoBehaviour
     {
         gm = FindAnyObjectByType<GameManager>();
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D otherCol)
     {
-        if (other.gameObject.CompareTag("Player"))
+        Debug.Log("trigger endered");
+        
+        if (otherCol.gameObject.CompareTag("Player"))
         {
             gm.LoadLevel("Pens");
         }

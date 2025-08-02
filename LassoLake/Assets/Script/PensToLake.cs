@@ -8,11 +8,13 @@ public class PensToLake : MonoBehaviour
     {
         gm = FindAnyObjectByType<GameManager>();
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D otherCol)
     {
-        if (other.CompareTag("Player"))
+        //Debug.Log("trigger endered");
+        
+        if (otherCol.gameObject.CompareTag("Player"))
         {
-            gm.LoadLevel("Pens");
+            gm.LoadLevel("Lake");
         }
     }
 }

@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Global.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: ccc43d35c2f274e4ea67c2ae5e5946e5
+  - enabled: 1
     path: Assets/Scenes/Lake.unity
     guid: 9e07929d6c65f2942989159a252ea724
   - enabled: 1
