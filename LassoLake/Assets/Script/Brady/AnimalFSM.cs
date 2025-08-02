@@ -135,7 +135,7 @@ public class AnimalFSM : MonoBehaviour
 
     void lasso()
     {
-        Debug.Log("lasso");
+        //Debug.Log("lasso");
         if(lastDirection.x > 0){
             animator.Play("idle right");
         }
@@ -153,10 +153,14 @@ public class AnimalFSM : MonoBehaviour
     }
 
     public void lassoCompleted(bool success){
-        if(success){
+
+        //Debug.Log("lasso animalfsm");
+        if (success)
+        {
             currentState = animalState.captured;
         }
-        else{
+        else
+        {
             currentState = animalState.deciding;
         }
     }

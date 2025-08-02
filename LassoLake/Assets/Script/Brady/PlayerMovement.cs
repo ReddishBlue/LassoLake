@@ -16,18 +16,26 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask enemyLayer;       // Assign only enemy layers in Inspector
     GameObject selectedAnimal;
     public GameObject lassoPrefab;
+    public GameObject lassoPatternPrefab;
 
     
 
     Rigidbody2D rbody;
 
 
-    public void lassoCompleted(bool successful){
-        if(selectedAnimal == null){
+    public void lassoCompleted(bool successful)
+    {
+
+        //Debug.Log("lasso playermove");
+        if (selectedAnimal == null)
+        {
+            //Debug.Log("null animal");
             return;
         }
-        AnimalFSM animalFSM = selectedAnimal.GetComponentInChildren<AnimalFSM>();
+
+        AnimalFSM animalFSM = selectedAnimal.GetComponent<AnimalFSM>();
         animalFSM.lassoCompleted(successful);
+        
 
     }
 
@@ -61,14 +69,18 @@ public class PlayerMovement : MonoBehaviour
     private void onInteract()
     {
         GameObject closestAnimal = findClosestEnemyInRange();
-        if(closestAnimal == null){
+        if (closestAnimal == null)
+        {
             return;
         }
+        selectedAnimal = closestAnimal;
         AnimalFSM animalScript = closestAnimal.GetComponent<AnimalFSM>();
         animalScript.doLasso();
-        GameObject outline = Instantiate(lassoPrefab, transform.position, Quaternion.identity);
+        GameObject outline = Instantiate(lassoPatternPrefab, transform.position, Quaternion.identity);
         Circle2 lassoTemplateScript = outline.GetComponent<Circle2>();
         lassoTemplateScript.setPlayerControllerReference(this);
+
+        Instantiate(lassoPrefab, transform.position, Quaternion.identity);
     }
 
     private GameObject findClosestEnemyInRange(){
