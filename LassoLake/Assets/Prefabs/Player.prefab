@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aec7af40db500c1ebd9efe4a7b9fc17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 60
+  movementSpeed: 15
   charRenderer: {fileID: 1590498766478410313}
   detectionRadius: 7
   enemyLayer:
