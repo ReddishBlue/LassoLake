@@ -174,10 +174,10 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 63
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -212,7 +212,8 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 8
-  lassoPrefab: {fileID: 1878779694523617283, guid: 2bd69b95831766c469b118511166d158, type: 3}
+  lassoPrefab: {fileID: 7634695604763870704, guid: a594ef89744c17e4a8ae4661dcc17684, type: 3}
+  lassoPatternPrefab: {fileID: 1878779694523617283, guid: 2bd69b95831766c469b118511166d158, type: 3}
 --- !u!95 &6496370049219217892
 Animator:
   serializedVersion: 7
