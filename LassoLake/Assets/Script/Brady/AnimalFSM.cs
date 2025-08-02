@@ -209,5 +209,6 @@ public class AnimalFSM : MonoBehaviour
     void captured()
     {
         Debug.Log("captured");
+        Destroy(this.gameObject);
     }
 }

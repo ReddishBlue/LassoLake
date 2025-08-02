@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     public GameObject lassoPrefab;
     public GameObject lassoPatternPrefab;
 
+    public string inventory;
+
     
 
     Rigidbody2D rbody;
@@ -32,15 +34,24 @@ public class PlayerMovement : MonoBehaviour
             //Debug.Log("null animal");
             return;
         }
+<<<<<<< Updated upstream
 
         AnimalFSM animalFSM = selectedAnimal.GetComponent<AnimalFSM>();
         animalFSM.lassoCompleted(successful);
         
 
+=======
+        AnimalFSM animalFSM = selectedAnimal.GetComponentInChildren<AnimalFSM>();
+        if(successful){
+            
+        }
+        animalFSM.lassoCompleted(successful);
+>>>>>>> Stashed changes
     }
 
     private void Awake()
     {
+        inventory = "none";
         playerInputActions = new LassoLakeInput();
         rbody = GetComponent<Rigidbody2D>();
         charRenderer = GetComponent<MyCharacterRenderer>();
