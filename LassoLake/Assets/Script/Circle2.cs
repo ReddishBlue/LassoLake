@@ -8,13 +8,21 @@ public class Circle2 : MonoBehaviour
 
     [SerializeField] private bool wasStartPassed = false;
     [SerializeField] private bool wasEndPassed = false;
+    PlayerMovement player;
 
     private void Update()
     {
         if (checkShapeDrawn())
         {
             //exit lasso mode
+            if(player != null){
+                player.lassoCompleted(true);
+            }
         }
+    }
+
+    public void setPlayerControllerReference(PlayerMovement script){
+        player = script;
     }
 
     private bool checkShapeDrawn()

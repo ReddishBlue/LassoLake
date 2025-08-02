@@ -12,12 +12,24 @@ public class PlayerMovement : MonoBehaviour
     // public Animator animator;
     
     public MyCharacterRenderer charRenderer;
+    public float detectionRadius = 3f; // Set in Inspector
+    public LayerMask enemyLayer;       // Assign only enemy layers in Inspector
+    GameObject selectedAnimal;
+    public GameObject lassoPrefab;
+
     
 
     Rigidbody2D rbody;
 
 
+    public void lassoCompleted(bool successful){
+        if(selectedAnimal == null){
+            return;
+        }
+        AnimalFSM animalFSM = selectedAnimal.GetComponentInChildren<AnimalFSM>();
+        animalFSM.lassoCompleted(successful);
 
+    }
 
     private void Awake()
     {
@@ -30,17 +42,90 @@ public class PlayerMovement : MonoBehaviour
     private void OnEnable()
     {
         playerInputActions.Player.Enable();
+        Debug.Log("added");
+        playerInputActions.Player.Interact.performed += OnInteractPerformed;
     }
 
     private void OnDisable()
     {
         playerInputActions.Player.Disable();
+        playerInputActions.Player.Interact.performed -= OnInteractPerformed;
+    }
+
+    private void OnInteractPerformed(InputAction.CallbackContext context)
+    {
+        // Debug.Log("started");
+        onInteract();
     }
 
     private void onInteract()
     {
-        
+        GameObject closestAnimal = findClosestEnemyInRange();
+        if(closestAnimal == null){
+            return;
+        }
+        AnimalFSM animalScript = closestAnimal.GetComponent<AnimalFSM>();
+        animalScript.doLasso();
+        GameObject outline = Instantiate(lassoPrefab, transform.position, Quaternion.identity);
+        Circle2 lassoTemplateScript = outline.GetComponent<Circle2>();
+        lassoTemplateScript.setPlayerControllerReference(this);
     }
+
+    private GameObject findClosestEnemyInRange(){
+        // Debug.Log("started 2");
+        Collider2D[] animalsInRange = Physics2D.OverlapCircleAll(transform.position, detectionRadius, enemyLayer);
+
+        if (animalsInRange.Length == 0)
+        {
+            Debug.Log("No animals in range.");
+            return null;
+        }
+
+        Collider2D closestAnimal = null;
+        float closestDistanceSqr = Mathf.Infinity;
+        Vector2 currentPosition = transform.position;
+
+        foreach (Collider2D animal in animalsInRange)
+        {
+            Vector2 directionToAnimals = (Vector2)animal.transform.position - currentPosition;
+            float distanceSqr = directionToAnimals.sqrMagnitude;  
+
+            if (distanceSqr < closestDistanceSqr)
+            {
+                closestDistanceSqr = distanceSqr;
+                closestAnimal = animal;
+            }
+        }
+
+        if (closestAnimal != null)
+        {
+            Debug.Log("Closest animal is: " + closestAnimal.name);
+        }
+
+        return closestAnimal.gameObject;
+
+
+    }
+
+    private void OnDrawGizmosSelected()
+{
+    // Default to red (no enemies found)
+    Color gizmoColor = Color.red;
+
+    // Only try to detect enemies if in play mode and this GameObject is active
+    if (Application.isPlaying)
+    {
+        Collider2D[] enemiesInRange = Physics2D.OverlapCircleAll(transform.position, detectionRadius, enemyLayer);
+
+        if (enemiesInRange.Length > 0)
+        {
+            gizmoColor = Color.green; // Enemy found!
+        }
+    }
+
+    Gizmos.color = gizmoColor;
+    Gizmos.DrawWireSphere(transform.position, detectionRadius);
+}
 
     private void Update() 
     {
