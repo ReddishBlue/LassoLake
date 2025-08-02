@@ -1,0 +1,572 @@
+fileFormatVersion: 2
+guid: 69a77333b324dd64e946e4b1e3637ae1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 363621404007090430
+    second: clickTrace_0
+  - first:
+      213: 6584757097705568524
+    second: clickTrace_1
+  - first:
+      213: 3146944797571971620
+    second: clickTrace_2
+  - first:
+      213: -5730228157666237865
+    second: clickTrace_3
+  - first:
+      213: 3520829603824414678
+    second: clickTrace_4
+  - first:
+      213: -3983844510844409570
+    second: clickTrace_5
+  - first:
+      213: 5120579660578979858
+    second: clickTrace_6
+  - first:
+      213: -910906200513345613
+    second: clickTrace_7
+  - first:
+      213: -2442344227447035524
+    second: clickTrace_8
+  - first:
+      213: -7549794292357316531
+    second: clickTrace_9
+  - first:
+      213: 7748125824915457420
+    second: clickTrace_10
+  - first:
+      213: 2687644445309128812
+    second: clickTrace_11
+  - first:
+      213: 1004752042450422383
+    second: clickTrace_12
+  - first:
+      213: -6488336912237621440
+    second: clickTrace_13
+  - first:
+      213: 1990457759985890354
+    second: clickTrace_14
+  - first:
+      213: 4310200313950370205
+    second: clickTrace_15
+  - first:
+      213: 1105992320307709183
+    second: clickTrace_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: clickTrace_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 196
+        width: 33
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef8429a8db7db0500800000000000000
+      internalID: 363621404007090430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clickTrace_1
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 198
+        width: 10
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c09f8fc51b1c16b50800000000000000
+      internalID: 6584757097705568524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clickTrace_2
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 225
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42a7a03ce913cab20800000000000000
+      internalID: 3146944797571971620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clickTrace_3
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 198
+        width: 21
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 752ec54c9d32a70b0800000000000000
+      internalID: -5730228157666237865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clickTrace_4
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 198
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6df22aadedf7cd030800000000000000
+      internalID: 3520829603824414678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clickTrace_5
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 204
+        width: 24
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e19aab2568a86b8c0800000000000000
+      internalID: -3983844510844409570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clickTrace_6
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 201
+        width: 40
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21086e04214ff0740800000000000000
+      internalID: 5120579660578979858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clickTrace_7
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 202
+        width: 41
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b783b603afcb53f0800000000000000
+      internalID: -910906200513345613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clickTrace_8
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 199
+        width: 44
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c792bcf7ddc0b1ed0800000000000000
+      internalID: -2442344227447035524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clickTrace_9
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 200
+        width: 10
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4045c4771eb93790800000000000000
+      internalID: -7549794292357316531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clickTrace_10
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 14
+        width: 23
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c85cd1de26fd68b60800000000000000
+      internalID: 7748125824915457420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clickTrace_11
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 62
+        width: 134
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c60d33d126e6c4520800000000000000
+      internalID: 2687644445309128812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clickTrace_12
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 10
+        width: 35
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6a0b91c8a891fd00800000000000000
+      internalID: 1004752042450422383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clickTrace_13
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 14
+        width: 45
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04f850b74fbc4f5a0800000000000000
+      internalID: -6488336912237621440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clickTrace_14
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 17
+        width: 33
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 234f06c69c68f9b10800000000000000
+      internalID: 1990457759985890354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clickTrace_15
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 13
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d99f9cf5958e0db30800000000000000
+      internalID: 4310200313950370205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clickTrace_16
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 4
+        width: 26
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff44040d726495f00800000000000000
+      internalID: 1105992320307709183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      clickTrace_0: 363621404007090430
+      clickTrace_1: 6584757097705568524
+      clickTrace_10: 7748125824915457420
+      clickTrace_11: 2687644445309128812
+      clickTrace_12: 1004752042450422383
+      clickTrace_13: -6488336912237621440
+      clickTrace_14: 1990457759985890354
+      clickTrace_15: 4310200313950370205
+      clickTrace_16: 1105992320307709183
+      clickTrace_2: 3146944797571971620
+      clickTrace_3: -5730228157666237865
+      clickTrace_4: 3520829603824414678
+      clickTrace_5: -3983844510844409570
+      clickTrace_6: 5120579660578979858
+      clickTrace_7: -910906200513345613
+      clickTrace_8: -2442344227447035524
+      clickTrace_9: -7549794292357316531
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

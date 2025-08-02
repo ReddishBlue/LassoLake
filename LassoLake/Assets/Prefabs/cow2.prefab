@@ -80,6 +80,7 @@ MonoBehaviour:
   idleTime: 3
   moveInterval: 2
   ID: pig
+  mySpawner: {fileID: 0}
 --- !u!114 &3637521832015878589
 MonoBehaviour:
   m_ObjectHideFlags: 0

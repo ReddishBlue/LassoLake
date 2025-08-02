@@ -12,6 +12,8 @@ public class AnimalSpawner : MonoBehaviour
 
     public int numActiveAnimals = 0;
 
+    [SerializeField] private int maxAnimals = 5;
+
     private void Start()
     {
         StartCoroutine(Spawner());
@@ -26,14 +28,14 @@ public class AnimalSpawner : MonoBehaviour
     {
         WaitForSeconds wait = new WaitForSeconds(spawnRate);
         
-        if (numActiveAnimals < 5)
+        if (numActiveAnimals < maxAnimals)
         {
             canSpawn = true;
         }
     
         while (canSpawn)
         {
-            if (numActiveAnimals >= 5)
+            if (numActiveAnimals >= maxAnimals)
             {
                 canSpawn = false;
             }

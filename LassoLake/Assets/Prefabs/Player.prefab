@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.43194, y: -0.08892, z: 0}
-  m_LocalScale: {x: 2.75, y: 2.75, z: 2.75}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4406365399053007594}
@@ -94,7 +94,7 @@ Transform:
   m_GameObject: {fileID: 8936608668897274333}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2, y: -0.26, z: 0}
+  m_LocalPosition: {x: -3.648, y: -0.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -143,7 +143,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 4
   m_Sprite: {fileID: 3428943708268241785, guid: a13a1f1669dd83e909b26f088f1a4e7b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -177,7 +177,7 @@ Rigidbody2D:
     m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 63
+    m_Bits: 191
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aec7af40db500c1ebd9efe4a7b9fc17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 60
+  movementSpeed: 20
   charRenderer: {fileID: 1590498766478410313}
   detectionRadius: 7
   enemyLayer:
@@ -214,6 +214,7 @@ MonoBehaviour:
     m_Bits: 8
   lassoPrefab: {fileID: 7634695604763870704, guid: a594ef89744c17e4a8ae4661dcc17684, type: 3}
   lassoPatternPrefab: {fileID: 1878779694523617283, guid: 2bd69b95831766c469b118511166d158, type: 3}
+  inventory: 
 --- !u!95 &6496370049219217892
 Animator:
   serializedVersion: 7
