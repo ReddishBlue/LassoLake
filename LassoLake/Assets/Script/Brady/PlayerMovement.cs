@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -91,18 +92,28 @@ public class PlayerMovement : MonoBehaviour
         playerInputActions.Player.Enable();
         Debug.Log("added");
         playerInputActions.Player.Interact.performed += OnInteractPerformed;
+        playerInputActions.Player.Escape.performed += OnEscapePerformed;
     }
 
     private void OnDisable()
     {
         playerInputActions.Player.Disable();
         playerInputActions.Player.Interact.performed -= OnInteractPerformed;
+        playerInputActions.Player.Escape.performed -= OnEscapePerformed;
     }
 
     private void OnInteractPerformed(InputAction.CallbackContext context)
     {
         // Debug.Log("started");
         onInteract();
+    }
+
+    private void OnEscapePerformed(InputAction.CallbackContext context){
+        onEscape();
+    }
+
+    private void onEscape(){
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void depositAnimal(){
