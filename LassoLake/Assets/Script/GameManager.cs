@@ -38,8 +38,8 @@ public class GameManager : MonoBehaviour
         capturedAnimals.Add(animal);
     }
 
-    public List<string> getAnimals(){
-        return capturedAnimals;
+    public string[] getAnimals(){
+        return capturedAnimals.ToArray();
     }
 
 
