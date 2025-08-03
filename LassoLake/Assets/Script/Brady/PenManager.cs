@@ -13,7 +13,7 @@ public class PenManager : MonoBehaviour
         gm = FindAnyObjectByType<GameManager>();
         string[] animals = gm.getAnimals();
         foreach(string animal in animals){
-            spawnAnimal(animal);
+            respawnCow(animal);
         }
 
 
