@@ -178,7 +178,7 @@ public partial class @LassoLakeInput: IInputActionCollection2, IDisposable
                     ""id"": ""134186f7-1f49-4cdb-8158-0ca02669d318"",
                     ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""initialStateCheck"": false
                 }
             ],
